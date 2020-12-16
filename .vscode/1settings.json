@@ -1,0 +1,112 @@
+{
+  "editor.formatOnSave": true,
+  "[ruby]": {
+    // ruby用formatterです。for文が自動的に修正されるのでfalse
+    // "editor.formatOnSave": false
+    "editor.formatOnSave": true
+  },
+  // -------------------------------------------------------------------------
+  // ruby solargraphの設定（rubyのフォーマッター）
+  // https: //marketplace.visualstudio.com/items?itemName=castwide.solargraph
+  //
+  // 診断レポートを有効にする。邪魔だからfalse
+  "solargraph.definitions": false,
+  // 参照の検索を有効にする。どういうこと？
+  "solargraph.references": true,
+  // シンボルの名前変更を有効にする
+  "solargraph.rename": true,
+  // ドキュメントとワークスペースのシンボル検索を有効にする。よく分からん
+  "solargraph.symbols": true,
+  // ホバーのヒントを有効にする
+  "solargraph.hover": true,
+  // solargraphの新しいバージョンが使用できるか確認。うざいからfalse。でも実際効いてない笑
+  "solargraph.checkGemVersion": false,
+  // 折りたたみを有効にする
+  "solargraph.folding": true,
+  // 入力中に自動フォーマットを有効にします。よくわからん
+  // "solargraph.autoformat": false,
+  "solargraph.autoformat": true,
+  // ドキュメントの書式設定を有効にする。実際は自動整形
+  // "solargraph.formatting": false,
+  "solargraph.formatting": true,
+  // オートコンプリートを有効にする
+  "solargraph.completion": true,
+  // エディターで空白文字を表示するかどうかを制御します。
+  //
+  // -------------------------------------------------------
+  //
+  "editor.renderWhitespace": "none",
+  // 別アプリに切り替えたら保存する
+  "files.autoSave": "onFocusChange",
+  // アイコンを変更
+  "workbench.iconTheme": "material-icon-theme",
+  // 右側にmapが表示されるのを非表示
+  "editor.minimap.enabled": false,
+  // 新バージョンの通知をしない
+  "vsicons.dontShowNewVersionMessage": true,
+  // 拡張機能を自動的に更新しない
+  "extensions.autoUpdate": false,
+  // シェルスクリプトのlinter
+  "[shellscript]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  // dockerfileのlinter
+  "[dockerfile]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "breadcrumbs.enabled": true,
+  "vsicons.presets.foldersAllDefaultIcon": true,
+  "explorer.confirmDelete": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "window.zoomLevel": 1,
+  "markdown.preview.fontSize": 16,
+  "workbench.activityBar.visible": false,
+  "workbench.sideBar.location": "left",
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnPaste": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "workbench.statusBar.visible": false,
+  "debug.console.fontSize": 14,
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 13,
+  "editor.renderControlCharacters": true,
+  "remote.extensionKind": {
+    "ms-azuretools.vscode-docker": "workspace"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "editor.suggestSelection": "first",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "liveServer.settings.donotVerifyTags": true,
+  "task.autoDetect": "off",
+  "editor.wrappingIndent": "none",
+  "javascript.preferences.quoteStyle": "single",
+  // htmlのフォーマッター設定
+  "html.format.contentUnformatted": "pre,code,textarea",
+  "html.format.extraLiners": "head, body, /html",
+  // 1つのチャンク内に保持できる改行の最大数。無制限にするには、'null'を使います。
+  "html.format.maxPreserveNewLines": null,
+  // 要素の前にある既存の改行を保持するかどうか。要素の前でのみ機能し、タグの内側やテキストに対しては機能しません。
+  "html.format.preserveNewLines": true,
+  // 再フォーマットしてはならないタグの、コンマ区切りの一覧。'null'の場合、既定で https://www.w3.org/TR/html5/dom.html#phrasing-content にリストされているすべてのタグになります。
+  "html.format.unformatted": "wbr",
+  // 属性を折り返します。
+  "html.format.wrapAttributes": "auto",
+  // 1行あたりの最大文字数 (0=無効にする)。
+  "html.format.wrapLineLength": 120,
+  "files.trimTrailingWhitespace": true
+}
