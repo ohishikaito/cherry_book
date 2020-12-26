@@ -2,8 +2,8 @@
   "editor.formatOnSave": true,
   "[ruby]": {
     // ruby用formatterです。for文が自動的に修正されるのでfalse
-    // "editor.formatOnSave": false
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
+    // "editor.formatOnSave": true
   },
   // -------------------------------------------------------------------------
   // ruby solargraphの設定（rubyのフォーマッター）
@@ -108,5 +108,6 @@
   "html.format.wrapAttributes": "auto",
   // 1行あたりの最大文字数 (0=無効にする)。
   "html.format.wrapLineLength": 120,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "javascript.updateImportsOnFileMove.enabled": "never"
 }
