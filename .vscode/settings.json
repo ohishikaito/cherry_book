@@ -2,8 +2,8 @@
   "editor.formatOnSave": true,
   "[ruby]": {
     // ruby用formatterです。for文が自動的に修正されるのでfalse
-    "editor.formatOnSave": false
-    // "editor.formatOnSave": true
+    // "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   // -------------------------------------------------------------------------
   // ruby solargraphの設定（rubyのフォーマッター）
