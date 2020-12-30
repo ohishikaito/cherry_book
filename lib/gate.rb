@@ -24,3 +24,4 @@ class Gate
     FARES[distance - 1] # 2 - 1 = 1(190)
   end
 end
+9264

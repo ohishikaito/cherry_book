@@ -1,8 +1,11 @@
 require 'minitest/autorun'
 require './lib/fizz_buzz.rb'
 
+require 'byebug';
+
 class SampleTest < Minitest::Test
   def test_fizz_buzz
+    # byebug
     assert_equal '1', fizz_buzz(1)
     assert_equal '2', fizz_buzz(2)
     assert_equal 'Fizz', fizz_buzz(3)
