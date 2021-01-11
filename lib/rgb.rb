@@ -26,7 +26,10 @@ def to_ints(n)
   # r,g,b=n[1..2],n[3..4],n[5..6]
   # [r,g,b].map{ |s| s.hex}
   # n.scan(/\w\w/).map(&:hex)
-  n.scan(/\w\w/).map{ |s| s.hex }
+  # n.scan(/\w\w/).map{ |s| s.hex }
+  # p n
+  # n.slice!(1..2).hex
+  n.scan(/\w\w/).map(&:hex)
   # p [r,g,b]
   # new_naumbers=numbers.map{|n| n*10}
 
