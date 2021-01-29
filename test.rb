@@ -1,42 +1,66 @@
-class Schedule
-  def scheduled?(schedulable, start_date, end_date)
-    puts "This #{schedulable.class} is not scheduled between #{start_date} and #{end_date}"
-    false
+class Parts
+  attr_reader :size, :chain, :tire_size
+
+  def initialize(args={})
+    # @size = args[:size]
+    @chain = args[:chain] || default_chain
+    @tire_size = args[:tire_size] || default_tire_size
+    post_initialize(args)
+  end
+
+  def post_initialize(args)
+    nil
+  end
+
+  def spares
+    {tire_size: tire_size, chain: chain}.merge(local_spares)
+  end
+
+  def local_spares
+    {}
+  end
+
+  def default_chain
+    'default_chain:10-speed'
+  end
+
+  def default_tire_size
+    raise NotImplementedError
   end
 end
 
-module Schedulable
-  # attr_writer :schedule
+class RoadBike < Parts
+  attr_reader :tape_color
 
-  def schedulable?(start_date, end_date)
-    !scheduled?(start_date - lead_days, end_date)
+  def post_initialize(args)
+    @tape_color = args[:tape_color]
   end
 
-  def schedule
-    @schedule ||= Schedule.new
+  def local_spares
+    {tape_color: tape_color}
   end
 
-  def scheduled?(start_date, end_date)
-    schedule.scheduled?(self, start_date, end_date)
-  end
-
-  def lead_days
-    0
+  def default_tire_size
+    '23'
   end
 end
 
 class Bicycle
-  include Schedulable
+  attr_reader :size, :parts
 
-  def lead_days
-    1
+  def initialize(args={})
+    @size=args[:size]
+    @parts=args[:parts] || Parts.new
+  end
+
+  def spares
+    parts.spares
   end
 end
 
-require 'date'
-starting=Date.parse('2015/09/04')
-ending=Date.parse('2015/09/10')
-
-b = Bicycle.new
-# p b.schedule
-p b.schedulable?(starting, ending)
+r={tape_color: 'tape_color'}
+# p(**h, **r)
+a=RoadBike.new(**r)
+p a.spares
+b=Bicycle.new
+# p b.spares

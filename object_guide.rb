@@ -109,6 +109,12 @@ a = { wheel: Wheel.new(26, 1.5)}
 p GearWrapper.gear(a).gear_inches
 # p Gear.new(a).gear_inches
 
+
+
+
+
+
+
 # DOF
 class User
   attr_accessor :name
@@ -173,6 +179,12 @@ class User3
 end
 user=User.new('alice')
 p user.user2.user3_name
+
+
+
+
+
+
 
 class Trip
   attr_reader :bicycles, :customers, :vehicle
@@ -276,3 +288,49 @@ r={tape_color: 'tape_color', hogehoge: 'hogehoge'}
 # p(**h, **r)
 a=RoadBike.new(**h, **r)
 p a.spares
+
+
+
+
+
+
+
+class Schedule
+  def scheduled?(schedulable, start_date, end_date)
+    puts "This #{schedulable.class} is not scheduled between #{start_date} and #{end_date}"
+    false
+  end
+end
+
+module Schedulable
+  def schedulable?(start_date, end_date)
+    !scheduled?(start_date - lead_days, end_date)
+  end
+
+  def schedule
+    @schedule ||= Schedule.new
+  end
+
+  def scheduled?(start_date, end_date)
+    schedule.scheduled?(self, start_date, end_date)
+  end
+
+  def lead_days
+    0
+  end
+end
+
+class Bicycle
+  include Schedulable
+
+  def lead_days
+    1
+  end
+end
+
+require 'date'
+starting=Date.parse('2015/09/04')
+ending=Date.parse('2015/09/10')
+
+b = Bicycle.new
+p b.schedulable?(starting, ending)
